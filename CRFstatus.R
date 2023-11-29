@@ -19,16 +19,16 @@ library(formattable)
 ######################
 
 ### the folder path: please note the "\" should be changed to "/"
-setwd("C:/Users/kate0/Downloads/20230112")
+setwd(" ")
 
 ### load CRF status
-crf<-read_excel("EV71_Freezing_eCRF_List.xlsx")
+crf<-read_excel(" ")
 
 ### load subject visit status
-sv<-read_excel("EV71_Summary_Subject_Visit_List.xls",col_types = "text")
+sv<-read_excel(" ")
 
 ### load subject list
-sl<-read_excel("EV71_Subject_List.xls")
+sl<-read_excel(" ")
 
 
 #####################################
@@ -184,34 +184,34 @@ crf_ong6<-crf %>%
 
 crf_ong<-bind_rows(crf_ong1,crf_ong2,crf_ong3,crf_ong4,crf_ong5,crf_ong6)
 
-#N
+#site1
 #entered
 crf_ong %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(`Saving status`,Visit)
 
 #sdv
 crf_ong %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(SDV, Visit)
 #freezing
 crf_ong %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(Status, Visit)
 
-#V
+#site2
 #entered
 crf_ong %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(`Saving status`,Visit)
 
 #sdv
 crf_ong %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(SDV, Visit)
 #freezing
 crf_ong %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(Status, Visit)
 
 
@@ -228,34 +228,34 @@ crf_wit<-crf %>%
   filter(Visit %in% c("Subject Information", "Visit1","Visit2","Visit3","Visit4","Visit5","Visit6")) %>% 
   filter(`Saving status`!="NA")
 
-#N
+#site1
 #entered
 crf_wit %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(`Saving status`,Visit)
 #sdv
 crf_wit %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(SDV, Visit)
 #freezing
 crf_wit %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(Status, Visit)
 
 
-#V
+#site2
 #entered
 crf_wit %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(`Saving status`,Visit)
 
 #sdv
 crf_wit %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(SDV, Visit)
 #freezing
 crf_wit %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(Status, Visit)
 
 
@@ -279,34 +279,35 @@ crf_sfr<-crf %>%
   filter(`Saving status`!="NA")
 
 
-#N
+#site1
 #entered
 crf_sfr %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(`Saving status`,Visit)
 #sdv
 crf_sfr %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(SDV, Visit)
 #freezing
 crf_sfr %>% 
-  filter(Site=="N.Nguyen Dinh Chieu Hospital") %>% 
+  filter(Site=="site1") %>% 
   tabyl(Status, Visit)
 
 
-#V
+#site2
 #entered
 crf_sfr %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(`Saving status`,Visit)
 
 #sdv
 crf_sfr %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(SDV, Visit)
+
 #freezing
 crf_sfr %>% 
-  filter(Site=="V.Vinh Long City Health Center") %>% 
+  filter(Site=="site2") %>% 
   tabyl(Status, Visit)
 
 rand_Sf %>% 
